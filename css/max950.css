@@ -1,0 +1,249 @@
+/* 屏幕以950px为基准，划分为19份，使用rem作为单位，则根元素字体为50px */
+/* 既：1rem = 50px */
+html{
+    font-size: 50px;
+}
+
+.main{
+    display: flex;
+}
+
+/* 左侧边栏 */
+.left-side{
+    display: none;
+    position: fixed;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 5rem;
+    height: 100vh;
+    inset: 0;
+    background-color: #ff6d6d;
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 1.2rem;
+    background-color: rgb(1, 38, 82);
+}
+
+.logo img{
+    margin-right: 1.5rem;
+    width: 2.36rem;
+    height: 0.8rem;
+}
+
+.drawer{
+    display: none;
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: calc(100% - 4.1rem);
+    overflow-y: auto;
+    background-color: rgb(1, 38, 82);
+}
+
+.column::-webkit-scrollbar{
+    width: 0.16rem;
+}
+
+.column::-webkit-scrollbar-thumb{
+    display: none;
+    background-color: rgba(35, 87, 156, 0.7);
+    border-radius: 0.08rem;
+}
+
+.column::-webkit-scrollbar-thumb:hover{
+    display: block;
+}
+
+.domain_main{
+    display: flex;
+    flex-direction: column;
+    margin-left: 0.5rem;
+}
+
+.domain_main li{
+    margin: 0.25rem 0;
+}
+
+.domain_interest{
+    margin: 0.25rem auto;
+}
+
+.domain_interest button{
+    width: 4rem;
+    height: 0.64rem;
+    border-radius: 0.8rem;
+}
+
+.domain_module{
+    display: flex;
+    flex-direction: column;
+    margin-left: 0.5rem;
+}
+
+.domain_module li{
+    margin: 0.25rem 0;
+}
+
+.column span{
+    margin-right: 0.3rem;
+    color: white;
+}
+
+.column a{
+    color: white;
+}
+
+.member{
+    width: 100%;
+    height: 2.9rem;
+    border-top: 0.04rem solid rgba(35, 87, 156, 0.7);
+    background-color: rgb(1, 38, 82);
+}
+
+/* 右侧边栏 */
+.right-side{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 1.2rem;
+    background-color: #fdfdfd;
+    border-bottom: 1px solid rgb(216, 216, 216);
+}
+
+.header .title{
+    flex: 1;
+    height: 100%;
+}
+
+#title-h3 h4::after{
+    font-family:"fontawesome";
+    content: '\f0c9';
+}
+
+.header .title h4{
+    text-align: center;
+    font-size: 0.48rem;
+    line-height: 1.2rem;
+    color: #545454;
+}
+
+.header .title h4:hover{
+    cursor: pointer;
+    color: #000000;
+}
+
+.search{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 5;
+    height: 100%;
+}
+
+.search .search-box{
+    display: flex;
+    align-items: center;
+    width: 7rem;
+    height: 0.8rem;
+    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.15);
+}
+
+.search-box input{
+    text-indent: 0.5rem;
+    width: calc(100% - 0.8rem);
+    height: 0.8rem;
+    font-size: 0.32rem;
+    caret-color: blue;
+    cursor: pointer;
+}
+
+.search-box button{
+    border: none;
+    width: 0.8rem;
+    height: 0.8rem;
+    background-color: rgb(0, 104, 230);
+    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.3);
+}
+
+@media screen and (max-width:768px){
+    .search .search-box{
+        display: flex;
+        align-items: center;
+        width: 4rem;
+        height: 0.8rem;
+        box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.);
+    }
+    
+    .search-box input{
+        text-indent: 0.5rem;
+        width: calc(100% - 0.8rem);
+        height: 0.8rem;
+        font-size: 0.32rem;
+        caret-color: blue;
+    }
+    
+    .search-box button{
+        border: none;
+        width: 0.8rem;
+        height: 0.8rem;
+        background-color: rgb(0, 104, 230);
+        box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.3);
+    }
+}
+
+.user{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    height: 100%;
+}
+
+.user img{
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+}
+
+.content{
+    width: 100%;
+    height: calc(100vh - 1.2rem);
+    background-color: #fdfdfd;
+    overflow-y: auto;
+}
+
+.content div{
+    width: calc(100% / 2);
+    height: 2rem;
+    background-color: #fcfcfc;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    text-align: center;
+    line-height: 2rem;
+}
+
+/* 遮罩层 */
+.mask{
+    display: none;
+    position: fixed;
+    width: 100vw;
+    height: 100VH;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
